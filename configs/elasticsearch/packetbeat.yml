@@ -1,0 +1,13 @@
+packetbeat.interfaces.device: any
+packetbeat.interfaces.internal_networks:
+  - private
+packetbeat.flows:
+  timeout: 30s
+  period: 10s
+output.elasticsearch:
+  hosts: ["farm-ctlr:9200"]
+setup.dashboards.enabled: true
+setup.kibana:
+  host: "http://farm-ctlr:5601"
+setup.template.settings:
+  index.number_of_shards: 1

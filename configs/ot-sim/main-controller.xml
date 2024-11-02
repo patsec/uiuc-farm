@@ -15,7 +15,7 @@
     <module name="tailscale">ot-sim-tailscale-module {{config_file}}</module>
   </cpu>
   <tailscale>
-    <accept-dns>false</accept-dns>
+    <accept-dns>true</accept-dns>
   </tailscale>
   <ground-truth>
     <elastic opensearch="true">
