@@ -10,8 +10,33 @@ services:
     volumes:
     - ./configs/docker/tigervnc-wireshark.conf:/etc/supervisor/conf.d/tigervnc-wireshark.conf
     - ./configs/docker/wireshark.conf:/etc/supervisor/conf.d/wireshark.conf
+  adversary:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.tools
+    image: ghcr.io/patsec/uiuc-farm/tools:main
+    init: true
+    cap_add:
+    - NET_ADMIN # for Tailscale
+    volumes:
+    - /lib/modules:/lib/modules:ro # for Tailscale
+    - /dev/net/tun:/dev/net/tun    # for Tailscale
+    - ./configs/docker/tigervnc-adversary.conf:/etc/supervisor/conf.d/tigervnc-adversary.conf
+    - ./configs/docker/tailscaled.conf:/etc/supervisor/conf.d/tailscaled.conf
+    - ./configs/docker/tailscale.conf:/etc/supervisor/conf.d/tailscale.conf
+    ports:
+    - 8090:8080
+    environment:
+    - OTSIM_TAILSCALE_AUTHKEY=${OTSIM_TAILSCALE_AUTHKEY} # for Tailscale
+    hostname: ${HOSTNAME}-adversary # for Tailscale
+    networks:
+      vpc:
+        ipv4_address: 10.11.12.200
   main-ctlr:
-    image: ghcr.io/patsec/ot-sim/ot-sim:main
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: ot-sim:packetbeat
     init: true
     cap_add:
     - NET_ADMIN # for Tailscale
