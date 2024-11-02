@@ -1,14 +1,18 @@
-# OT Security Lab: UIUC CS 460 / ECE 419 - Security Laboratory
+# Modules
 
-Welcome to the second OT Security Lab for UIUC course CS 460 / EC419 - Security
-Laboratory in December 2024.
+* [module-0](#previous-wind-turbine-module-0)
 
-This lab has 4 separate modules, each building on the previous one, in separate
-branches.
+# Previous Wind Turbine (module-0)
 
-To start, create a Gitpod account (if needed) and deploy the initial Gitpod
-workspace using the following URL.
+In this module:
 
-https://gitpod.io/#https://github.com/patsec/uiuc-farm/tree/module-0
+* You will re-familiarize yourself with the wind turbine from the last lab.
+Recall, it has an adversary container and a Grafana container for ground truth.
 
-Follow the README instructions in the workspace.
+In the next module, you will set up this wind turbine in a larger wind farm.
+Change the two `{{FIX_ME}}` entries in the URL below with the values provided
+by your instructor. Then, start the next branch.
+
+> There will be a Q&A session at the module’s end. Stop the current Gitpod
+> workspace and deploy the next branch in Gitpod using this URL:
+> https://gitpod.io/#HOSTNAME={{FIX_ME}},OTSIM_TAILSCALE_AUTHKEY={{FIX_ME}}/https://github.com/patsec/uiuc-farm/tree/module-1
