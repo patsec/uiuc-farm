@@ -11,7 +11,7 @@
   </cpu>
   <ground-truth>
     <elastic opensearch="true">
-      <endpoint>http://blade-3:9200</endpoint>
+      <endpoint>http://opensearch:9200</endpoint>
       <index-base-name>wind-turbine</index-base-name>
       <label name="turbine">wtg-1</label>
     </elastic>
