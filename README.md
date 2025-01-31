@@ -54,7 +54,7 @@ images. Note the unique Description and Tags for each key.
   <img src="images/04-copy_keys.png" />
 </p>
 
-> [!DANGER]
+> [!CAUTION]
 > You will not be able to access the key in its entirety again.
 
 #### Key for Farm Controller
